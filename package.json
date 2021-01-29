@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/qvvverty/ahj-rxjs-1-back#readme",
   "dependencies": {
-    "koa": "^2.13.0"
+    "faker": "^5.2.0",
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
