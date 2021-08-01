@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "yarn install --production",
-    "start": "forever server.js",
+    "start": "node server.js",
     "watch": "forever -w server.js"
   },
   "repository": {
