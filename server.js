@@ -12,6 +12,11 @@ const router = new Router();
 //   multipart: true,
 // }));
 
+function getRandomNumber(min, max) {
+  const randomNumber = min + Math.random() * (max + 1 - min);
+  return Math.floor(randomNumber);
+}
+
 app
   .use(async (ctx, next) => {
     ctx.response.set({
@@ -38,7 +43,19 @@ app
 
 router.get('/messages/unread', (ctx) => {
   // ctx.response.body = 'router working';
-  ctx.response.body = JSON.stringify(new Message());
+  // ctx.response.body = JSON.stringify(new Message());
+
+  const responseObj = {
+    status: 'ok',
+    timestamp: Date.now(),
+    messages: [],
+  };
+
+  for (let i = 0; i <= getRandomNumber(-1, 2); i += 1) {
+    responseObj.messages.push(new Message());
+  }
+
+  ctx.response.body = JSON.stringify(responseObj);
 });
 
 const server = http.createServer(app.callback());
